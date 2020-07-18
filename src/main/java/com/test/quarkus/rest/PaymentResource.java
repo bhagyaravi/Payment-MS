@@ -17,12 +17,11 @@ import javax.transaction.Transactional;
 
 
 @Path("/payment")
-@Produces(MediaType.APPLICATION_JSON)
-@Consumes(MediaType.APPLICATION_JSON)
 public class PaymentResource {
 	
 	@GET
 	@Path("/test")
+	@Produces(MediaType.TEXT_PLAIN)
 	public String hello(){
 	return "Hello World";
 	}
