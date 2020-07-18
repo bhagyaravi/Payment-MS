@@ -10,6 +10,7 @@ import java.util.Calendar;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import javax.ws.rs.Consumes;
+import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import javax.transaction.Transactional;
 
