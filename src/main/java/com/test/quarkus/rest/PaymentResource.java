@@ -25,7 +25,7 @@ public class PaymentResource {
 
 	@POST
 	@Path("/makepayment")
-	@Consumes(MediaType.APPLICATION_JSON)
+	//@Consumes(MediaType.APPLICATION_JSON)
 	Response makePayment() {
 		Payment payment = new Payment();
 		payment.setAmount(4000);
