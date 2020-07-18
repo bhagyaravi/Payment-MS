@@ -28,8 +28,8 @@ public class PaymentResource {
 	}
 
 	@POST
-	@Path("/submitpayment")
 	@Transactional
+	@Path("/submitpayment")
 	Response makePayment(Payment payment) {
 		Calendar calobj = Calendar.getInstance();
 		DateFormat df = new SimpleDateFormat("dd/MM/yy HH:mm:ss");
@@ -40,8 +40,8 @@ public class PaymentResource {
 	}
 	
 	@POST
-	@Path("/test1")
 	@Transactional
+	@Path("/test1")
 	Response test1() {
 		return Response.ok(201).entity("testing this").build();
 	}
