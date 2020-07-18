@@ -35,8 +35,11 @@ public class PaymentResource {
 		payment.setCardnumber("1234-1234-1234-1234");
 		Calendar calobj = Calendar.getInstance();
 		DateFormat df = new SimpleDateFormat("dd/MM/yy HH:mm:ss");
+		try{
 		payment.setExpiryDate(df.parse("11/08/2020"));
-		
+		}catch(java.text.ParseException e){
+		e.printStackTrace();
+		}
 		if (df.format(payment.getExpiryDate()).compareTo(df.format(calobj.getTime())) > 0)
 			return Response.status(500).entity("Card has expired").build();
 		payment.persist();
