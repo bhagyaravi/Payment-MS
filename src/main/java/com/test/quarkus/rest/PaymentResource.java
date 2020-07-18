@@ -15,6 +15,12 @@ import javax.ws.rs.core.MediaType;
 
 @Path("/payment")
 public class PaymentResource {
+	
+	@GET
+	@Path("/test")
+	public String hello(){
+	return "Hello World";
+	}
 
 	@POST
 	@Path("/makepayment")
