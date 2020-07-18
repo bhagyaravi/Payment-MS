@@ -13,6 +13,13 @@ public class Payment extends PanacheEntity {
 	String cardnumber;
 	Date expiryDate;
 	int cvvnumber;
+	long amount;
+	public long getAmount() {
+		return amount;
+	}
+	public void setAmount(long amount) {
+		this.amount = amount;
+	}
 	public long getPaymentId() {
 		return paymentId;
 	}
