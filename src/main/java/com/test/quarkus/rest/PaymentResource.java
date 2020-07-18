@@ -3,6 +3,7 @@ package com.test.quarkus.rest;
 import javax.ws.rs.Path;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.POST;
+import javax.ws.rs.GET;
 import com.test.quarkus.model.Payment;
 import java.text.DateFormat;
 import java.util.Calendar;
