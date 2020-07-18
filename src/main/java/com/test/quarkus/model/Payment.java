@@ -25,7 +25,7 @@ public class Payment extends PanacheEntity {
 	public void setAmount(long amount) {
 		this.amount = amount;
 	}
-	public long getPaymentId() {
+	public UUID getPaymentId() {
 		return this.id;
 	}
 	
