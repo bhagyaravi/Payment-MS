@@ -38,4 +38,11 @@ public class PaymentResource {
 		payment.persist();
 		return Response.ok(201).entity(payment).build();		
 	}
+	
+	@POST
+	@Path("/test1")
+	@Transactional
+	Response makePayment(Payment payment) {
+		return Response.ok(201).entity("testing this").build();
+	}
 }
