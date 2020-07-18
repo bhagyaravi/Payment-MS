@@ -42,7 +42,7 @@ public class PaymentResource {
 	@POST
 	@Path("/test1")
 	@Transactional
-	Response test1(Payment payment) {
+	Response test1() {
 		return Response.ok(201).entity("testing this").build();
 	}
 }
