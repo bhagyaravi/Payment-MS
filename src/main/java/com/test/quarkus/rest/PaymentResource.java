@@ -28,7 +28,7 @@ public class PaymentResource {
 	}
 
 	@POST
-	@Path("/makepayment")
+	@Path("/submitpayment")
 	@Transactional
 	Response makePayment(Payment payment) {
 		Calendar calobj = Calendar.getInstance();
