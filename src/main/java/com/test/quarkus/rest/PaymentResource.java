@@ -26,7 +26,12 @@ public class PaymentResource {
 	@POST
 	@Path("/makepayment")
 	@Consumes(MediaType.APPLICATION_JSON)
-	Response makePayment(Payment payment) {
+	Response makePayment() {
+		Payment payment = new Payment();
+		payment.setAmount(4000);
+		payment.setPaymentType("card");
+		payment.setCardnumber("1234-1234-1234-1234");
+		payment.setExpiryDate(new Date("11/08/2020"));
 		Calendar calobj = Calendar.getInstance();
 		DateFormat df = new SimpleDateFormat("dd/MM/yy HH:mm:ss");
 		if (df.format(payment.getExpiryDate()).compareTo(df.format(calobj.getTime())) > 0)
