@@ -1,8 +1,8 @@
 package com.test.quarkus.model;
 
 import javax.persistence.Entity;
+import io.quarkus.hibernate.orm.panache.PanacheEntityBase;
 
-import io.quarkus.hibernate.orm.panache.PanacheEntity;
 import java.util.Date;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
