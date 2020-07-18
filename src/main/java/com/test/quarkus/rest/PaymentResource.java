@@ -30,6 +30,7 @@ public class PaymentResource {
 	@POST
 	@Transactional
 	@Path("/submitpayment")
+	@Consumes(MediaType.APPLICATION_JSON)
 	Response makePayment(Payment payment) {
 		Calendar calobj = Calendar.getInstance();
 		DateFormat df = new SimpleDateFormat("dd/MM/yy HH:mm:ss");
