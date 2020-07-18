@@ -4,7 +4,8 @@ import javax.persistence.Entity;
 
 import io.quarkus.hibernate.orm.panache.PanacheEntity;
 import java.util.Date;
-
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 @Entity
 public class Payment extends PanacheEntity {
 
