@@ -8,7 +8,10 @@ import java.util.Date;
 @Entity
 public class Payment extends PanacheEntity {
 
-	long paymentId;
+	@Id
+	@GeneratedValue
+	UUID id;
+	
 	String paymentType;
 	String cardnumber;
 	Date expiryDate;
@@ -21,11 +24,9 @@ public class Payment extends PanacheEntity {
 		this.amount = amount;
 	}
 	public long getPaymentId() {
-		return paymentId;
+		return this.id;
 	}
-	public void setPaymentId(long paymentId) {
-		this.paymentId = paymentId;
-	}
+	
 	public String getPaymentType() {
 		return paymentType;
 	}
