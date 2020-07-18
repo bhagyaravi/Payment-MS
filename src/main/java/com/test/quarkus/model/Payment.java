@@ -6,6 +6,7 @@ import io.quarkus.hibernate.orm.panache.PanacheEntity;
 import java.util.Date;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import java.util.UUID;
 @Entity
 public class Payment extends PanacheEntity {
 
