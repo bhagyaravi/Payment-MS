@@ -57,12 +57,15 @@
       <artifactId>quarkus-resteasy-jsonb</artifactId>
     </dependency>
   </dependencies>
- <build>
+ < <build>
     <plugins>
       <plugin>
         <groupId>io.quarkus</groupId>
         <artifactId>quarkus-maven-plugin</artifactId>
         <version>${quarkus-plugin.version}</version>
+	<configuration>
+		<uberJar>true</uberJar>
+	</configuration>
         <executions>
           <execution>
             <goals>
@@ -79,9 +82,9 @@
         <artifactId>maven-surefire-plugin</artifactId>
         <version>${surefire-plugin.version}</version>
         <configuration>
-          <systemPropertyVariables>
+          <systemProperties>
             <java.util.logging.manager>org.jboss.logmanager.LogManager</java.util.logging.manager>
-          </systemPropertyVariables>
+          </systemProperties>
         </configuration>
       </plugin>
     </plugins>
@@ -106,9 +109,9 @@
                   <goal>verify</goal>
                 </goals>
                 <configuration>
-                  <systemPropertyVariables>
+                  <systemProperties>
                     <native.image.path>${project.build.directory}/${project.build.finalName}-runner</native.image.path>
-                  </systemPropertyVariables>
+                  </systemProperties>
                 </configuration>
               </execution>
             </executions>
