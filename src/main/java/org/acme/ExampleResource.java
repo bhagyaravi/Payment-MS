@@ -8,6 +8,7 @@ import javax.transaction.Transactional;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.POST;
 import javax.ws.rs.core.Response;
+import com.test.quarkus.model.Payment
 
 
 @Path("/hello")
