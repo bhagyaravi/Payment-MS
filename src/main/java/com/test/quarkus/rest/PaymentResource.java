@@ -25,6 +25,7 @@ public class PaymentResource {
 
 	@POST
 	@Path("/makepayment")
+	@Transactional
 	//@Consumes(MediaType.APPLICATION_JSON)
 	Response makePayment() {
 		Payment payment = new Payment();
