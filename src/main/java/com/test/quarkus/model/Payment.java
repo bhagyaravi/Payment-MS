@@ -8,7 +8,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import java.util.UUID;
 @Entity
-public class Payment extends PanacheEntity {
+public class Payment extends PanacheEntityBase {
 
 	@Id
 	@GeneratedValue
