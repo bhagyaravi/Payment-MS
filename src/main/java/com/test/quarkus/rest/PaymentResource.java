@@ -16,6 +16,7 @@ import java.util.Date;
 public class PaymentResource {
 
 	@POST
+	@Path("/makepayment")
 	Response makePayment(Payment payment) {
 		Calendar calobj = Calendar.getInstance();
 		DateFormat df = new SimpleDateFormat("dd/MM/yy HH:mm:ss");
