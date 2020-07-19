@@ -52,6 +52,6 @@ public class ExampleResource {
 	    if (df.format(payment.getExpiryDate()).compareTo(df.format(calobj.getTime())) > 0)
 			return Response.status(500).entity("Card has expired").build();
 		payment.persist();
-		return Response.ok(201).entity(payment).build();
+		return Response.ok(payment)..status(201).build();
     }
 }
