@@ -1,4 +1,4 @@
-package org.acme;
+package com.test.quarkus.rest;
 
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
@@ -19,7 +19,7 @@ import javax.transaction.Transactional;
 import com.test.quarkus.model.Payment;
 
 @Path("/payment")
-public class ExampleResource {
+public class PaymentResource {
 
     @GET
     @Produces(MediaType.TEXT_PLAIN)
