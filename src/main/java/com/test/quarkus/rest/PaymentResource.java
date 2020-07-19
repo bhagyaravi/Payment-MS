@@ -16,7 +16,7 @@ import javax.transaction.Transactional;
 
 
 
-@Path("/payment")
+@Path("/test")
 public class PaymentResource {
 	
 	@GET
