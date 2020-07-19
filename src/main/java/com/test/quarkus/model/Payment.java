@@ -19,6 +19,7 @@ public class Payment extends PanacheEntityBase {
 	Date expiryDate;
 	int cvvnumber;
 	long amount;
+	String status = "inprogress";
 	public long getAmount() {
 		return amount;
 	}
