@@ -15,12 +15,15 @@ import java.util.Calendar;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import javax.transaction.Transactional;
+import org.eclipse.microprofile.reactive.messaging.Channel;
+import org.eclipse.microprofile.reactive.messaging.Emitter;
+import javax.inject.Inject;
 
 import com.test.quarkus.model.Payment;
 
 @Path("/payment")
 public class PaymentResource {
-
+	@Inject @Channel("paymentstatus") Emitter<String> paymentEmiter;
     @GET
     @Produces(MediaType.TEXT_PLAIN)
     public Response hello() {
@@ -52,7 +55,11 @@ public class PaymentResource {
 		String result = jsonb.toJson(payment);
 	    if (df.format(payment.getExpiryDate()).compareTo(df.format(calobj.getTime())) > 0)
 			return Response.status(500).entity("Card has expired").build();
+	        Jsonb jsonb = JsonbBuilder.create();
+		String result = jsonb.toJson(payment);
+		payment.setStatus("success");
 		payment.persist();
+	    	paymentEmiter.send(result);
 		return Response.ok(payment).status(201).build();
     }
 }
