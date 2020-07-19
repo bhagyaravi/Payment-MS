@@ -42,6 +42,7 @@ public class ExampleResource {
     
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
+    @Produces(MediaType.APPLICATION_JSON)
     @Path("/makepayment")
     @Transactional
     public Response test(Payment payment) {
