@@ -14,6 +14,7 @@ import java.text.DateFormat;
 import java.util.Calendar;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import javax.transaction.Transactional;
 
 import com.test.quarkus.model.Payment;
 
