@@ -18,7 +18,7 @@ import javax.transaction.Transactional;
 
 import com.test.quarkus.model.Payment;
 
-@Path("/payment")
+@Path("/test")
 public class ExampleResource {
 
     @GET
