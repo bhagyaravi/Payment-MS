@@ -44,6 +44,8 @@ public class ExampleResource {
     @Path("/makepayment")
     public Response test(Payment payment) {
     	Jsonb jsonb = JsonbBuilder.create();
+	    Calendar calobj = Calendar.getInstance();
+		DateFormat df = new SimpleDateFormat("dd/MM/yy HH:mm:ss");
 		String result = jsonb.toJson(payment);
 	    if (df.format(payment.getExpiryDate()).compareTo(df.format(calobj.getTime())) > 0)
 			return Response.status(500).entity("Card has expired").build();
