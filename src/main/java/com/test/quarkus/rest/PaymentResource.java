@@ -48,7 +48,7 @@ public class PaymentResource {
     @Produces(MediaType.APPLICATION_JSON)
     @Path("/makepayment")
     @Transactional
-    public Response test(Payment payment) {
+    public Response makepayment(Payment payment) {
     	Jsonb jsonb = JsonbBuilder.create();
 	    Calendar calobj = Calendar.getInstance();
 		DateFormat df = new SimpleDateFormat("dd/MM/yy HH:mm:ss");
