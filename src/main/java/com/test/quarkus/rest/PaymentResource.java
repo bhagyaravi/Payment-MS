@@ -52,14 +52,16 @@ public class PaymentResource {
     	Jsonb jsonb = JsonbBuilder.create();
 	    Calendar calobj = Calendar.getInstance();
 		DateFormat df = new SimpleDateFormat("dd/MM/yy HH:mm:ss");
-		String result = jsonb.toJson(payment);
+		
 	    if (df.format(payment.getExpiryDate()).compareTo(df.format(calobj.getTime())) > 0){
 		paymentEmiter.send("Payment Failed");
 		    return Response.status(500).entity("Card has expired").build();
 	    }
-		payment.setStatus("success");
+		payment.setStatus("Payment Successful");
 		payment.persist();
-	    	paymentEmiter.send("Payment Successful");
+	    	String result = jsonb.toJson(payment);
+	    	System.out.println("Message being sent to Kafka is :" + result);
+	    	paymentEmiter.send(result);
 		return Response.ok(payment).status(201).build();
     }
 }
