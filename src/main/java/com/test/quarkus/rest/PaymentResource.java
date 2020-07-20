@@ -55,8 +55,6 @@ public class PaymentResource {
 		String result = jsonb.toJson(payment);
 	    if (df.format(payment.getExpiryDate()).compareTo(df.format(calobj.getTime())) > 0)
 			return Response.status(500).entity("Card has expired").build();
-	        Jsonb jsonb = JsonbBuilder.create();
-		String result = jsonb.toJson(payment);
 		payment.setStatus("success");
 		payment.persist();
 	    	paymentEmiter.send(result);
