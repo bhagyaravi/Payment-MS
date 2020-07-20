@@ -20,6 +20,15 @@ public class Payment extends PanacheEntityBase {
 	int cvvnumber;
 	long amount;
 	String status = "inprogress";
+	UUID tripId;
+	
+	public UUID getTripId() {
+		return this.tripId;
+	}
+
+    	public void setTripId(UUID tripId) {
+		this.tripId = tripId;
+	}
 	public long getAmount() {
 		return amount;
 	}
